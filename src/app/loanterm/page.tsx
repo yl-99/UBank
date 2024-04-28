@@ -7,7 +7,7 @@ export default function loanterm() {
 
   const {isOpen, onOpen, onOpenChange} =useDisclosure();  
   return (
-    <div>
+    <div className="flex gap-4" style={{height: "100vh", justifyContent:"center", alignContent:"center", flexDirection:"column"}} >
     <User
     name= "Bill Ackman"
       
@@ -18,14 +18,13 @@ export default function loanterm() {
 
     <Textarea
     isReadOnly
-    label="Property information"
+    label="Loan "
     variant="bordered"
     labelPlacement="outside"
     placeholder="Enter your description"
     defaultValue="Get access to instant cash with this loan"
     className="max-w-xs" 
-    /> 
-
+     /> 
 <>
 <Button onPress={onOpen} color="primary">ACCEPT</Button>
 <Modal isOpen={isOpen} onOpenChange={onOpenChange}>

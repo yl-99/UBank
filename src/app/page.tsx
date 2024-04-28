@@ -1,45 +1,68 @@
 'use client'
 import React from "react";
-import { FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
-import {Button, Input} from "@nextui-org/react";
+import {Button, Input, Link} from "@nextui-org/react";
 
 
  
 export default function LoginPage() {
   const router = useRouter()
  
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
- 
-    const formData = new FormData(event.currentTarget)
-    const email = formData.get('email')
-    const password = formData.get('password')
- 
-    const response = await fetch('/api/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password }),
-    })
- 
-    if (response.ok) {
-      router.push('/profile')
-    } else {
-      // Handle errors
-    }
-  }
- 
   return (
-    <form onSubmit={handleSubmit}>
-      <div
-      className="flex w-full flex-wrap md:flex-nowrap gap-8" >
-      <Input type="email" name="email" placeholder="Email" required />
-      <Input type="password" name="password" placeholder="Password" required />
-      </div>
-      <Button color="primary" size="sm" variant="ghost">Login</Button>
-      
-    </form>
-  )
+    <div className="flex gap-4" style={{height: "100vh", justifyContent:"center", flexDirection:"column", marginLeft:450}}>
+
+    <Input classNames={{
+          label: "text-black/50 dark:text-white/90",
+          input: [
+            "bg-transparent",
+            "text-black/90 dark:text-white/90",
+            "placeholder:text-default-700/50 dark:placeholder:text-white/60",
+          ],
+          innerWrapper: "bg-transparent",
+          inputWrapper: [
+            "shadow-xl",
+            "bg-default-200/50",
+            "dark:bg-default/60",
+            "backdrop-blur-xl",
+            "backdrop-saturate-200",
+            "hover:bg-default-200/70",
+            "dark:hover:bg-default/70",
+            "group-data-[focused=true]:bg-default-200/50",
+            "dark:group-data-[focused=true]:bg-default/60",
+            "!cursor-text",
+            "max-w-[500px]"
+          ],
+        }}
+         type="text" label="User Name"  />
+    <Input classNames={{
+          label: "text-black/50 dark:text-white/90",
+          input: [
+            "bg-transparent",
+            "text-black/90 dark:text-white/90",
+            "placeholder:text-default-700/50 dark:placeholder:text-white/60",
+          ],
+          innerWrapper: "bg-transparent",
+          inputWrapper: [
+            "shadow-xl",
+            "bg-default-200/50",
+            "dark:bg-default/60",
+            "backdrop-blur-xl",
+            "backdrop-saturate-200",
+            "hover:bg-default-200/70",
+            "dark:hover:bg-default/70",
+            "group-data-[focused=true]:bg-default-200/50",
+            "dark:group-data-[focused=true]:bg-default/60",
+            "!cursor-text",
+            "max-w-[500px]"
+          ],
+        }}
+        type="password" label="Password"  />
+
+<Button color="primary" variant="bordered" style={{marginTop: 50}} className="max-w-[500px]" onClick={()=> router.push('/home')}>
+         Login
+      </Button>
+  </div>
+  );
 }
 
 
