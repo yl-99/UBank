@@ -31,4 +31,5 @@ export default function paymentconfirmation() {
         </div>
       </CardBody>
     </Card>
+  );
 }
