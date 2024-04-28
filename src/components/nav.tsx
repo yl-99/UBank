@@ -22,7 +22,7 @@ export default function Nav() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="/Getloans">
+          <Link color="foreground" href="/creategroup">
             Group
           </Link>
         </NavbarItem>
