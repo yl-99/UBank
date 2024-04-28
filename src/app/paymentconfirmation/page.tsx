@@ -1,3 +1,4 @@
+
 import React from "react";
 import {Input, DatePicker } from "@nextui-org/react";
 import {Button, ButtonGroup} from "@nextui-org/react";
@@ -30,5 +31,4 @@ export default function paymentconfirmation() {
         </div>
       </CardBody>
     </Card>
-  );
 }
