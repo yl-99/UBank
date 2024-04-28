@@ -1,13 +1,42 @@
-import React from "react";
-import {Input} from "@nextui-org/react";
-import {DatePicker} from "@nextui-org/react";
-import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/react";
+"use client";
 
+import React from "react";
+import {Input, DatePicker } from "@nextui-org/react";
+import {Button, ButtonGroup} from "@nextui-org/react";
+import { 
+  Table, 
+  TableHeader, 
+  TableColumn, 
+  TableBody, 
+  TableRow, 
+  TableCell,
+  getKeyValue
+} from "@nextui-org/react";
 
 export default function App() {
   const placements = [
     "outside",
   ];
+  const rows = [
+    {
+      key: "1",
+      rating: "(star) 5.0",
+      creditScore: "750",
+      income: "(currency) 120000",
+    },]
+    const columns = [
+      {
+        key: "rating",
+        label: "RATING",
+      },{
+        key: "creditScore",
+        label: "CREDIT SCORE",
+      },
+      {
+        key: "income",
+        label: "INCOME",
+      },]
+
   return (
     <div className="flex flex-col gap-4">
       <div className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
@@ -46,34 +75,38 @@ export default function App() {
  <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-2">
         <div className="flex w-full flex-wrap items-end md:flex-nowrap mb-6 md:mb-0 gap-4">
-          {placements.map((placement) => (
-            <DatePicker 
-              label={"Birth date"} 
+          {placements.map((placement,i) => (
+            <DatePicker key={i} 
+              label={"Date"} 
               className="max-w-[284px]"
               description={placement}
               labelPlacement={"outside"}
-            />
-            
+            />         
           ))}
         </div>
       </div>  
     </div> 
-      </div>
-      <Table aria-label="Example static collection table">
-      <TableHeader>
-        <TableColumn>RATING</TableColumn>
-        <TableColumn>CREDIT SCORE</TableColumn>
-        <TableColumn>INCOME</TableColumn>
+    <Table aria-label="Example Dynamic collection table">
+      <TableHeader columns={columns} >
+        {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
       </TableHeader>
-      <TableBody>
-        <TableRow key="1">
-          <TableCell>5.00</TableCell>
-          <TableCell>CEO</TableCell>
-          <TableCell>Active</TableCell>
-        </TableRow>
+      <TableBody items={rows}>
+        {(item) => (
+          <TableRow key={item.key}>
+            {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
+          </TableRow>
+        )}
       </TableBody>
     </Table>
-    </div>  
-    
+      </div>   
+      <div className="flex gap-4 items-center">
+      <Button size="lg">
+        Public
+      </Button>  
+      <Button size="lg">
+        Private
+      </Button>  
+    </div>          
+    </div>     
   );
 }
