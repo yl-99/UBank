@@ -1,7 +1,6 @@
 'use client'
 
-import React from "react";
-import {User, Link, Textarea, Button, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure} from "@nextui-org/react";
+import { Button, Link, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, Textarea, User, useDisclosure } from "@nextui-org/react";
 
 export default function loanterm() {
 
@@ -9,24 +8,24 @@ export default function loanterm() {
   return (
     <div className="flex gap-4" style={{height: "100vh", justifyContent:"center", alignContent:"center", flexDirection:"column"}} >
     <User
-    name= "Bill Ackman"
+    name= "Tony Reichert"
       
       avatarProps={{
-        src: "https://avatars.githubusercontent.com/u/30373425?v=4"
+        src:"https://i.pravatar.cc/150?u=a042581f4e29026024d"
       }}
     />
-
-    <Textarea
+<div style={{margin:"50px", alignSelf:"center"}}> <Textarea
     isReadOnly
-    label="Loan "
+    label="Loan Details"
     variant="bordered"
     labelPlacement="outside"
     placeholder="Enter your description"
-    defaultValue="Get access to instant cash with this loan"
+    defaultValue="Get access to instant cash of $350 with this loan at a 2% interest of 3 months"
     className="max-w-xs" 
-     /> 
+     /> </div>
+   
 <>
-<Button onPress={onOpen} color="primary">ACCEPT</Button>
+<Button onPress={onOpen} color="primary" style={{display: "inline-block", width: "500px", alignSelf:"center"}} >ACCEPT</Button>
 <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
   <ModalContent>
     {(onClose) => (
@@ -39,9 +38,6 @@ export default function loanterm() {
 
            </ModalBody>
               <ModalFooter>
-                <Button color="danger" variant="light" onPress={onClose}>
-                  Close
-                </Button>
                 <Link href="/borrowed">
                 <Button color="primary" onClick={onClose}>
                  My Loans

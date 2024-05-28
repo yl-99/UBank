@@ -1,17 +1,6 @@
 "use client";
 
-import React from "react";
-import {Input, DatePicker } from "@nextui-org/react";
-import {Button, ButtonGroup} from "@nextui-org/react";
-import { 
-  Table, 
-  TableHeader, 
-  TableColumn, 
-  TableBody, 
-  TableRow, 
-  TableCell,
-  getKeyValue
-} from "@nextui-org/react";
+import { Button, DatePicker, Input, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, getKeyValue } from "@nextui-org/react";
 
 export default function App() {
   const placements = [
@@ -38,7 +27,7 @@ export default function App() {
       },]
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex gap-4" style={{height: "100vh", justifyContent:"center", flexDirection:"column", margin:"20px"}}>
       <div className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
         <Input
           label="Interest"

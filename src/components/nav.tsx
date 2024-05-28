@@ -1,7 +1,9 @@
+'use client'
 import { Button, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
-
+import { useRouter } from "next/navigation";
 
 export default function Nav() {
+  const router = useRouter()
   return (
     <Navbar shouldHideOnScroll>
       <NavbarBrand>
@@ -29,7 +31,7 @@ export default function Nav() {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button  color="primary" variant="flat">
+          <Button  color="primary" variant="flat" onClick={() => router.push('/')}>
             Sign Out
           </Button>
         </NavbarItem>

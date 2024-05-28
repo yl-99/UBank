@@ -6,7 +6,7 @@ export default function loanhistory() {
     const router = useRouter()
     
   return (
-  <div className="flex gap-x-4" style={{height:'100vh', flexDirection:"column", backgroundColor: "white", alignItems:"center"}}>
+  <div className="flex gap-x-4" style={{height:'100vh', flexDirection:"column", alignItems:"center"}}>
     
     <p style={{fontSize: 30, marginBottom:30}}><b><u>Loan History</u></b></p>
 
