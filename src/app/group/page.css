@@ -1,0 +1,91 @@
+/* App.css */
+
+body {
+  
+    height: 100vh;
+   
+  }
+  
+  .page-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .group-heading {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .avatar-name {
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+    border: 2px solid white; 
+    padding: 20px; 
+    border-radius: 10px; 
+    background-color: rgba(255, 255, 255, 0.1); 
+  }
+  
+  .avatar-item {
+    position: relative;
+    margin: 10px; /* Adjust spacing between avatars */
+  }
+  
+ 
+  
+  .large-avatar {
+    width: 80px; /* Adjust avatar size */
+    height: 80px; /* Adjust avatar size */
+    font-size: 24px; /* Adjust font size for avatar ID */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid white; /* Add border around each avatar */
+    border-radius: 50%; /* Make avatars circular */
+  }
+  
+  .avatar-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  /* Pseudo-element for displaying ID on hover */
+  .large-avatar:hover::before {
+    content: attr(data-avatar-id);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: black;
+    z-index: 1;
+  }
+  
+
+  /* body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+  } */
+  

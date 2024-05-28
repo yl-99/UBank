@@ -8,7 +8,7 @@ export default function Getloans() {
   const router = useRouter()
 
   return(
-    <div className="flex gap-x-4" style={{height:'100vh', flexDirection:"column", backgroundColor: "white"}}>
+    <div className="flex gap-4" style={{height: "100vh", justifyContent:"center", flexDirection:"column", margin:"20px"}}>
      <p style={{fontSize: 20, margin:100, textAlign:"center"}}>Your Qualified Loans</p>
 
       <div className="flex flex-col gap-4">

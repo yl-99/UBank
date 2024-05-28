@@ -1,7 +1,6 @@
 'use client'
-import React from "react";
-import { useRouter } from 'next/navigation'
-import {Button, Input, Link} from "@nextui-org/react";
+import { Button, Input } from "@nextui-org/react";
+import { useRouter } from 'next/navigation';
 
 
  
@@ -9,9 +8,9 @@ export default function LoginPage() {
   const router = useRouter()
  
   return (
-    <div className="flex gap-4" style={{height: "100vh", justifyContent:"center", flexDirection:"column", marginLeft:450}}>
-
-    <Input classNames={{
+    <div className="flex gap-4" style={{height: "100vh", justifyContent:"center", flexDirection:"column", alignItems:"center"}}>
+<div style={{alignSelf:"center", width:"300px", marginBottom:"20px"}}>
+<Input classNames={{
           label: "text-black/50 dark:text-white/90",
           input: [
             "bg-transparent",
@@ -33,8 +32,10 @@ export default function LoginPage() {
             "max-w-[500px]"
           ],
         }}
-         type="text" label="User Name"  />
-    <Input classNames={{
+         type="text" label="User Name" />
+</div>
+    <div style={{alignSelf:"center", width:"300px"}}>
+<Input classNames={{
           label: "text-black/50 dark:text-white/90",
           input: [
             "bg-transparent",
@@ -57,8 +58,10 @@ export default function LoginPage() {
           ],
         }}
         type="password" label="Password"  />
+    </div>
+    
 
-<Button color="primary" variant="bordered" style={{marginTop: 50}} className="max-w-[500px]" onClick={()=> router.push('/home')}>
+<Button color="primary" variant="bordered" style={{marginTop: 50, width:150}}  onClick={()=> router.push('/home')}>
          Login
       </Button>
   </div>
